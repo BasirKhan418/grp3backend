@@ -5,8 +5,10 @@ const User = require("../models/User");
 const router = express.Router();
 const fetchuser =require("../middleware/fetchuser");
 const { body, validationResult } = require('express-validator');
+require("dotenv").config({path:"./.env"});
 //route1 create user using post request doesnot require auth no login required
-const Jwt_Secret = "inotebookBasir#$#@!@#$";
+const Jwt_Secret = process.env.Jwt_Secret;
+console.log(Jwt_Secret);
 router.post(
   "/createuser",
   [
