@@ -99,4 +99,7 @@ res.send(user)
       res.status(500).send("Internal server error occured")
   }
 })
+router.get("/get",(req,res)=>{
+  res.send("Hello we are get")
+})
 module.exports = router;
